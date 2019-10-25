@@ -329,14 +329,14 @@ pfset Chemistry.ParFlowTimeUnits years
 
 
 
-pfset Chemistry.WriteSiloPrimaryMobile False
+#pfset Chemistry.WriteSiloPrimaryMobile False
 pfset Chemistry.PrintPrimaryMobile True
-pfset Chemistry.WriteSiloMineralVolfx False
-pfset Chemistry.WriteSiloMineralSurfArea False
-pfset Chemistry.WriteSiloMineralRate False
-pfset Chemistry.WriteSiloPrimaryFreeIon False
-pfset Chemistry.WriteSiloSecondaryFreeIon False
-pfset Chemistry.WriteSilopH False
+#pfset Chemistry.WriteSiloMineralVolfx False
+#pfset Chemistry.WriteSiloMineralSurfArea False
+#pfset Chemistry.WriteSiloMineralRate False
+#pfset Chemistry.WriteSiloPrimaryFreeIon False
+#pfset Chemistry.WriteSiloSecondaryFreeIon False
+#pfset Chemistry.WriteSilopH False
 pfset Chemistry.PrintpH False
 
 
