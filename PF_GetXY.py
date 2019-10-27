@@ -1,7 +1,10 @@
+import os
+import numpy as np
+
 def GetXY_ParFlow_1D_100(path,root,pf_file):
 
     # read CrunchFlow data
-    filename = os.path.join(path,cf_file)
+    filename = os.path.join(path,pf_file)
     f = open(filename,'r')
     lines = f.readlines()
     f.close()
