@@ -142,7 +142,7 @@ pfset Phase.water.Viscosity.Value	1.0
 #-----------------------------------------------------------------------------
 # Contaminants
 #-----------------------------------------------------------------------------
-pfset Contaminants.Names			"tce"
+pfset Contaminants.Names			"tce dummy dummy2 3 4"
 pfset Contaminants.tce.Degradation.Value	 0.0
 
 #-----------------------------------------------------------------------------
@@ -168,7 +168,7 @@ pfset TimingInfo.DumpInterval	     10.0
 pfset Geom.Porosity.GeomNames          background
 
 pfset Geom.background.Porosity.Type    Constant
-pfset Geom.background.Porosity.Value  0.25
+pfset Geom.background.Porosity.Value   0.25
 
 #-----------------------------------------------------------------------------
 # Domain
@@ -307,7 +307,7 @@ pfset Mannings.Geom.domain.Value 2.3e-7
 #---------------------------------------------------------
 pfset Solver.Chemistry True
 pfset Chemistry.Engine CrunchFlow
-pfset Chemistry.InputFile 1d-isotherms-crunch.in
+pfset Chemistry.InputFile 1d-surface-complexation-crunch.in
 
 
 # order of geomnames matters
@@ -331,14 +331,15 @@ pfset Chemistry.ParFlowTimeUnits years
 
 
 pfset Chemistry.PrintPrimaryMobile True
+pfset Chemistry.PrintPrimarySorbed True
 pfset Chemistry.PrintMineralVolfx True
 pfset Chemistry.PrintMineralVolfx True
 pfset Chemistry.PrintMineralSurfArea True
 pfset Chemistry.PrintMineralRate True
 pfset Chemistry.PrintPrimaryFreeIon True
 pfset Chemistry.PrintSecondaryFreeIon True
-pfset Chemistry.PrintPrimarySorbed True
 pfset Chemistry.PrintpH True
+pfset Chemistry.PrintSurfSiteDens True
 
 #-----------------------------------------------------------------------------
 # The Solver Impes MaxIter default value changed so to get previous
@@ -355,8 +356,8 @@ pfset Solver.Nonlinear.ResidualTol 1.0e-15
 #-----------------------------------------------------------------------------
 # Run and Unload the ParFlow output files
 #-----------------------------------------------------------------------------
-pfrun isotherms_pf
-pfundist isotherms_pf
+pfrun surface_complexation_pf
+pfundist surface_complexation_pf
 
 #-----------------------------------------------------------------------------
 # If running as test; check output.

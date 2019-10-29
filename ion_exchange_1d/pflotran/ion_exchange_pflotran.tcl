@@ -168,7 +168,7 @@ pfset TimingInfo.DumpInterval	     10.0
 pfset Geom.Porosity.GeomNames          background
 
 pfset Geom.background.Porosity.Type    Constant
-pfset Geom.background.Porosity.Value  1.0
+pfset Geom.background.Porosity.Value   0.25
 
 #-----------------------------------------------------------------------------
 # Domain
@@ -306,8 +306,8 @@ pfset Mannings.Geom.domain.Value 2.3e-7
 # ALQUIMIA INPUT VARS
 #---------------------------------------------------------
 pfset Solver.Chemistry True
-pfset Chemistry.Engine CrunchFlow
-pfset Chemistry.InputFile 1d-ion-exchange-crunch.in
+pfset Chemistry.Engine PFloTran
+pfset Chemistry.InputFile 1d-ion-exchange-trim.in
 
 
 # order of geomnames matters

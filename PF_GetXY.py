@@ -1,3 +1,7 @@
+
+import os
+import numpy as np
+
 def GetXY_ParFlow_1D_100(pf_file,path="",ignore=1):
 
     # read CrunchFlow data
