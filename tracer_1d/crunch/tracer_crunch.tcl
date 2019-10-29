@@ -168,7 +168,7 @@ pfset TimingInfo.DumpInterval	     10.0
 pfset Geom.Porosity.GeomNames          background
 
 pfset Geom.background.Porosity.Type    Constant
-pfset Geom.background.Porosity.Value  0.25
+pfset Geom.background.Porosity.Value   0.25
 
 #-----------------------------------------------------------------------------
 # Domain
@@ -233,7 +233,6 @@ pfset Patch.back.BCPressure.alltime.Value		0.0
 pfset Patch.front.BCPressure.Type			FluxConst
 pfset Patch.front.BCPressure.Cycle			"constant"
 pfset Patch.front.BCPressure.alltime.Value		0.0
-
 
 
 #-----------------------------------------------------------------------------
@@ -307,7 +306,7 @@ pfset Mannings.Geom.domain.Value 2.3e-7
 #---------------------------------------------------------
 pfset Solver.Chemistry True
 pfset Chemistry.Engine CrunchFlow
-pfset Chemistry.InputFile 1d-isotherms-crunch.in
+pfset Chemistry.InputFile 1d-tracer-crunch.in
 
 
 # order of geomnames matters
@@ -330,22 +329,19 @@ pfset Chemistry.ParFlowTimeUnits years
 
 
 
+#pfset Chemistry.WriteSiloPrimaryMobile False
 pfset Chemistry.PrintPrimaryMobile True
-pfset Chemistry.PrintMineralVolfx True
-pfset Chemistry.PrintMineralVolfx True
-pfset Chemistry.PrintMineralSurfArea True
-pfset Chemistry.PrintMineralRate True
-pfset Chemistry.PrintPrimaryFreeIon True
-pfset Chemistry.PrintSecondaryFreeIon True
-pfset Chemistry.PrintPrimarySorbed True
-pfset Chemistry.PrintpH True
+#pfset Chemistry.WriteSiloMineralVolfx False
+#pfset Chemistry.WriteSiloMineralSurfArea False
+#pfset Chemistry.WriteSiloMineralRate False
+#pfset Chemistry.WriteSiloPrimaryFreeIon False
+#pfset Chemistry.WriteSiloSecondaryFreeIon False
+#pfset Chemistry.WriteSilopH False
+pfset Chemistry.PrintpH False
 
-#-----------------------------------------------------------------------------
-# The Solver Impes MaxIter default value changed so to get previous
-# results we need to set it back to what it was
-#-----------------------------------------------------------------------------
+
 pfset Solver.MaxIter 50000
-pfset Solver.CFL 0.6
+pfset Solver.CFL 0.6666666666667
 pfset Solver.AdvectOrder 2
 pfset Solver.AdvectEnforceMinMax True
 pfset Solver.RelTol 1.0e-35
@@ -355,12 +351,7 @@ pfset Solver.Nonlinear.ResidualTol 1.0e-15
 #-----------------------------------------------------------------------------
 # Run and Unload the ParFlow output files
 #-----------------------------------------------------------------------------
-pfrun isotherms_pf
-pfundist isotherms_pf
+pfrun tracer_pf
+pfundist tracer_pf
 
-#-----------------------------------------------------------------------------
-# If running as test; check output.
-# You do not need this for normal PF input files; this is done so the examples
-# are run and checked as part of our testing process.
-#-----------------------------------------------------------------------------
 

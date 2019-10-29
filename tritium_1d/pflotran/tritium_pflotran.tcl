@@ -306,8 +306,8 @@ pfset Mannings.Geom.domain.Value 2.3e-7
 # ALQUIMIA INPUT VARS
 #---------------------------------------------------------
 pfset Solver.Chemistry True
-pfset Chemistry.Engine CrunchFlow
-pfset Chemistry.InputFile 1d-isotherms-crunch.in
+pfset Chemistry.Engine PFloTran
+pfset Chemistry.InputFile 1d-tritium-trim.in
 
 
 # order of geomnames matters
@@ -337,7 +337,6 @@ pfset Chemistry.PrintMineralSurfArea True
 pfset Chemistry.PrintMineralRate True
 pfset Chemistry.PrintPrimaryFreeIon True
 pfset Chemistry.PrintSecondaryFreeIon True
-pfset Chemistry.PrintPrimarySorbed True
 pfset Chemistry.PrintpH True
 
 #-----------------------------------------------------------------------------
@@ -355,8 +354,8 @@ pfset Solver.Nonlinear.ResidualTol 1.0e-15
 #-----------------------------------------------------------------------------
 # Run and Unload the ParFlow output files
 #-----------------------------------------------------------------------------
-pfrun isotherms_pf
-pfundist isotherms_pf
+pfrun tritium_pf
+pfundist tritium_pf
 
 #-----------------------------------------------------------------------------
 # If running as test; check output.

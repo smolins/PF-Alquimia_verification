@@ -21,17 +21,17 @@ pfset Process.Topology.R        1
 #-----------------------------------------------------------------------------
 # Computational Grid
 #-----------------------------------------------------------------------------
-pfset ComputationalGrid.Lower.X                0.0
-pfset ComputationalGrid.Lower.Y                 0.0
-pfset ComputationalGrid.Lower.Z                  0.0
+pfset ComputationalGrid.Lower.X              0.0
+pfset ComputationalGrid.Lower.Y              0.0
+pfset ComputationalGrid.Lower.Z              0.0
 
 pfset ComputationalGrid.DX	                 1.0
 pfset ComputationalGrid.DY                   1.0
 pfset ComputationalGrid.DZ	                 1.0
 
-pfset ComputationalGrid.NX                      100
-pfset ComputationalGrid.NY                      1
-pfset ComputationalGrid.NZ                      1
+pfset ComputationalGrid.NX                   100
+pfset ComputationalGrid.NY                   1
+pfset ComputationalGrid.NZ                   1
 
 #-----------------------------------------------------------------------------
 # The Names of the GeomInputs
@@ -142,7 +142,7 @@ pfset Phase.water.Viscosity.Value	1.0
 #-----------------------------------------------------------------------------
 # Contaminants
 #-----------------------------------------------------------------------------
-pfset Contaminants.Names			"tce"
+pfset Contaminants.Names			"tce dummy dummy2"
 pfset Contaminants.tce.Degradation.Value	 0.0
 
 #-----------------------------------------------------------------------------
@@ -168,7 +168,7 @@ pfset TimingInfo.DumpInterval	     10.0
 pfset Geom.Porosity.GeomNames          background
 
 pfset Geom.background.Porosity.Type    Constant
-pfset Geom.background.Porosity.Value  0.25
+pfset Geom.background.Porosity.Value   0.25
 
 #-----------------------------------------------------------------------------
 # Domain
@@ -306,8 +306,8 @@ pfset Mannings.Geom.domain.Value 2.3e-7
 # ALQUIMIA INPUT VARS
 #---------------------------------------------------------
 pfset Solver.Chemistry True
-pfset Chemistry.Engine CrunchFlow
-pfset Chemistry.InputFile 1d-isotherms-crunch.in
+pfset Chemistry.Engine PFloTran
+pfset Chemistry.InputFile 1d-calcite-trim.in
 
 
 # order of geomnames matters
@@ -337,7 +337,6 @@ pfset Chemistry.PrintMineralSurfArea True
 pfset Chemistry.PrintMineralRate True
 pfset Chemistry.PrintPrimaryFreeIon True
 pfset Chemistry.PrintSecondaryFreeIon True
-pfset Chemistry.PrintPrimarySorbed True
 pfset Chemistry.PrintpH True
 
 #-----------------------------------------------------------------------------
@@ -351,12 +350,13 @@ pfset Solver.AdvectEnforceMinMax True
 pfset Solver.RelTol 1.0e-35
 pfset Solver.AbsTol 1.0e-50
 pfset Solver.Nonlinear.ResidualTol 1.0e-15
+pfset Solver.PrintVelocities True
 
 #-----------------------------------------------------------------------------
 # Run and Unload the ParFlow output files
 #-----------------------------------------------------------------------------
-pfrun isotherms_pf
-pfundist isotherms_pf
+pfrun calcite_pf
+pfundist calcite_pf
 
 #-----------------------------------------------------------------------------
 # If running as test; check output.
