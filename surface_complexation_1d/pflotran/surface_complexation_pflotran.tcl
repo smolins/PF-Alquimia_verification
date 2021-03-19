@@ -346,7 +346,7 @@ pfset Chemistry.PrintSurfSiteDens True
 # results we need to set it back to what it was
 #-----------------------------------------------------------------------------
 pfset Solver.MaxIter 50000
-pfset Solver.CFL 0.6
+pfset Solver.CFL 0.2
 pfset Solver.AdvectOrder 2
 pfset Solver.AdvectEnforceMinMax True
 pfset Solver.RelTol 1.0e-35
